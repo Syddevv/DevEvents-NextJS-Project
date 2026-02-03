@@ -3,3 +3,5 @@ reviews:
     enabled: true
     base_branches:
       - "*"
+
+  review_status: true
