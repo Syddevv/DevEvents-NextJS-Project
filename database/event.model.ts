@@ -2,7 +2,7 @@ import mongoose, { Schema, Model, HydratedDocument } from "mongoose";
 
 export interface EventAttrs {
   title: string;
-  slug?: string;
+  slug: string;
   description: string;
   overview: string;
   image: string;
