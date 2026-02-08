@@ -32,6 +32,12 @@ export default async function connectToDatabase(): Promise<Mongoose> {
     });
   }
 
-  cached.conn = await cached.promise;
-  return cached.conn;
+  try {
+    cached.conn = await cached.promise;
+    return cached.conn;
+  } catch (error) {
+    // Clear the cached promise so subsequent calls can retry.
+    cached.promise = null;
+    throw error;
+  }
 }
