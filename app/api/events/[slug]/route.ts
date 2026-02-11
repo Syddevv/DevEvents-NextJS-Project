@@ -10,13 +10,6 @@ interface RouteContext {
   params: Promise<RouteParams>;
 }
 
-/**
- * GET handler to fetch event details by slug
- * @param _req - Unused request object (kept for handler signature)
- * @param context - Contains dynamic route parameters
- * @returns JSON response with event data or error message
- */
-
 export async function GET(
   _req: unknown,
   context: RouteContext,
